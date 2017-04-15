@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+
+<!-- <script type="text/javascript">
+jQuery('.skin li').click(function(){
+  var currentClass = jQuery(this).attr('class');
+  jQuery(this).siblings().removeClass('hover');
+  jQuery(this).addClass('hover');
+  var cc = currentClass.substring(0,5);
+  cc = convertcsslittle(cc);
+  var skincssurl = jQuery('.stylecssurl').attr('href').substring(0,jQuery('.stylecssurl').attr('href').indexOf('style')) + cc;
+  jQuery('.skincsslittle').attr("href",skincssurl);
+createCookie('skin',currentClass,365);
+});
+</script> -->
+
+
+
+<a id="skin1" href="javascript:void(0)" class="easyui-linkbutton" onclick="changeCss('default')">蓝色皮肤</a><br/><br/>
+<a id="skin2" href="javascript:void(0)" class="easyui-linkbutton" onclick="changeCss('gray')">灰色皮肤</a><br/><br/>
+<a id="skin3" href="javascript:void(0)" class="easyui-linkbutton" onclick="changeCss('unite')">自定义皮肤</a>
+
+<script>
+// 更换主题
+function changeCss(cssName) {
+  if (document.getElementsByTagName_r("link").length > 0) {
+   for(var i = 0 ; i < document.getElementsByTagName_r("link").length; i++){
+    var ctrlLink = document.getElementsByTagName_r("link")[i];
+    var cssOld = ctrlLink.getAttribute("href");
+    var cssNew = cssOld.replace("default", cssName);
+    cssNew = cssNew.replace("gray", cssName);
+    cssNew = cssNew.replace("unite", cssName);
+    ctrlLink.setAttribute("href", cssNew);
+   }
+  }
+}
+</script>
+</body>
+</html>
